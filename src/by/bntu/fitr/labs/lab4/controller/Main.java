@@ -35,6 +35,7 @@ public class Main {
             Output.consolePrintLine(e.toString());
         }
 
+        // TODO: make this beautiful !
         Output.consolePrintLine(Algorithms.isMultipleOfNumbers(1, 2, 3, 5));
 
         sb.delete(0, sb.length()); // Clear StringBuilder
