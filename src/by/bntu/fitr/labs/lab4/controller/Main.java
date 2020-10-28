@@ -7,6 +7,8 @@ import by.bntu.fitr.labs.lab4.view.Output;
 import by.bntu.fitr.labs.lab4.module.logic.Algorithms;
 import by.bntu.fitr.labs.lab4.module.utils.Input;
 
+import java.util.Random;
+
 public class Main {
     public static void main(String[] args) {
         Output.consolePrint("Enter age: ");
@@ -21,22 +23,48 @@ public class Main {
         sb.append(" eyes.");
 
         Output.consolePrintLine(sb);
+        sb.delete(0, sb.length());
 
         Output.consolePrint("\nEnter amount of elements: ");
         int n = Input.getInt();
+        sb.append("In array of numbers ");
         Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {
             arr[i] = Algorithms.getRandomInt(-100, 100);
+            sb.append(arr[i]);
+            sb.append(" ");
         }
 
         try {
-            Output.consolePrintLine(Algorithms.findMax(arr));
+            sb.append("the greatest number is ");
+            sb.append(Algorithms.findMax(arr));
+            Output.consolePrintLine(sb);
+            sb.delete(0, sb.length());
         } catch (IllegalStateException e) {
             Output.consolePrintLine(e.toString());
         }
 
-        // TODO: make this beautiful !
-        Output.consolePrintLine(Algorithms.isMultipleOfNumbers(1, 2, 3, 5));
+
+        Output.consolePrint("Enter one number: ");
+        int number = Input.getInt();
+        n = Algorithms.getRandomInt(1, 5);
+        arr = new Integer[n];
+        for (int i = 0; i < n;i++){
+            arr[i] = Algorithms.getRandomInt(1, 80);
+        }
+        boolean multiple = Algorithms.isMultipleOfNumbers(number, 2, 3, 5);
+        sb.append("\n\nThe num ");
+        sb.append(number);
+        sb.append(multiple?" is ":" is not ");
+        sb.append("multiple of the numbers ");
+        for (int i = 0; i <n; i++) {
+            sb.append(arr[i]);
+            sb.append(" ");
+        }
+
+        Output.consolePrintLine(sb);
+
+
 
         sb.delete(0, sb.length()); // Clear StringBuilder
         sb.append("\nResult of toss of 2 Dices: ");
