@@ -10,14 +10,14 @@ public class Algorithms {
             throw new IllegalStateException("Array length can not be zero.");
         }
 
-        T min = arr[0];
+        T max = arr[0];
         for (T var : arr) {
-            if (var.compareTo(min) > 0) {
-                min = var;
+            if (var.compareTo(max) > 0) {
+                max = var;
             }
         }
 
-        return min;
+        return max;
     }
 
     public static boolean isMultipleOfNumbers(int num, int... numbers) {

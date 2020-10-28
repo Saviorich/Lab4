@@ -36,7 +36,6 @@ public class Main {
         }
 
         Output.consolePrintLine(Algorithms.isMultipleOfNumbers(1, 2, 3, 5));
-        //jiu
 
         sb.delete(0, sb.length()); // Clear StringBuilder
         sb.append("\nResult of toss of 2 Dices: ");
@@ -52,6 +51,5 @@ public class Main {
         sb.append(Algorithms.getWeekDay(day));
 
         Output.consolePrintLine(sb.toString());
-        //ssanyalox
     }
 }
