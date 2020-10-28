@@ -52,5 +52,6 @@ public class Main {
         sb.append(Algorithms.getWeekDay(day));
 
         Output.consolePrintLine(sb.toString());
+        //ssanyalox
     }
 }
