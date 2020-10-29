@@ -11,9 +11,9 @@ public class Algorithms {
         }
 
         T max = arr[0];
-        for (T var : arr) {
-            if (var.compareTo(max) > 0) {
-                max = var;
+        for (T item : arr) {
+            if (item.compareTo(max) > 0) {
+                max = item;
             }
         }
 
