@@ -3,7 +3,6 @@ package by.bntu.fitr.labs.lab4.module.logic;
 import by.bntu.fitr.labs.lab4.view.Output;
 
 public class Algorithms {
-    private final static String INVALID_DAY = "doesn't exist";
 
     public static <T extends Comparable<T>> T findMax(T... arr) {
         if (arr.length == 0) {
@@ -41,18 +40,19 @@ public class Algorithms {
     }
 
     public static String getWeekDay(int value) {
-        String[] days = new String[] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+        String[] days = new String[] {
+                "doesn't exist", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
-        switch (--value) {
-            case 0:
+        switch (value) {
             case 1:
             case 2:
             case 3:
             case 4:
             case 5:
             case 6:
+            case 7:
                 return days[value];
         }
-        return INVALID_DAY;
+        return days[0];
     }
 }
