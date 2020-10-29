@@ -39,9 +39,10 @@ public class Main {
             sb.append("the greatest number is ");
             sb.append(Algorithms.findMax(arr));
             Output.consolePrintLine(sb);
-            sb.delete(0, sb.length());
         } catch (IllegalStateException e) {
             Output.consolePrintLine(e.toString());
+        } finally {
+            sb.delete(0, sb.length());
         }
 
 
