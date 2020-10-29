@@ -7,8 +7,6 @@ import by.bntu.fitr.labs.lab4.view.Output;
 import by.bntu.fitr.labs.lab4.module.logic.Algorithms;
 import by.bntu.fitr.labs.lab4.module.utils.Input;
 
-import java.util.Random;
-
 public class Main {
     public static void main(String[] args) {
         Output.consolePrint("Enter age: ");
@@ -64,7 +62,6 @@ public class Main {
         }
 
         Output.consolePrintLine(sb);
-
 
         sb.delete(0, sb.length()); // Clear StringBuilder
         sb.append("\nResult of toss of 2 Dices: ");
