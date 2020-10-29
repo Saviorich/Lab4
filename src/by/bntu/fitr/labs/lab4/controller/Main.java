@@ -50,21 +50,20 @@ public class Main {
         int number = Input.getInt();
         n = Algorithms.getRandomInt(1, 5);
         arr = new Integer[n];
-        for (int i = 0; i < n;i++){
+        for (int i = 0; i < n; i++) {
             arr[i] = Algorithms.getRandomInt(1, 80);
         }
         boolean multiple = Algorithms.isMultipleOfNumbers(number, 2, 3, 5);
         sb.append("\n\nThe num ");
         sb.append(number);
-        sb.append(multiple?" is ":" is not ");
+        sb.append(multiple ? " is " : " is not ");
         sb.append("multiple of the numbers ");
-        for (int i = 0; i <n; i++) {
+        for (int i = 0; i < n; i++) {
             sb.append(arr[i]);
             sb.append(" ");
         }
 
         Output.consolePrintLine(sb);
-
 
 
         sb.delete(0, sb.length()); // Clear StringBuilder
