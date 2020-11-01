@@ -52,7 +52,7 @@ public class Main {
             arr[i] = Algorithms.getRandomInt(1, 80);
         }
         boolean multiple = Algorithms.isMultipleOfNumbers(number, 2, 3, 5);
-        sb.append("\n\nThe num ");
+        sb.append("\nThe num ");
         sb.append(number);
         sb.append(multiple ? " is " : " is not ");
         sb.append("multiple of the numbers ");
@@ -77,5 +77,21 @@ public class Main {
         sb.append(Algorithms.getWeekDay(day));
 
         Output.consolePrintLine(sb.toString());
+
+        Output.consolePrint("Enter day: ");
+        day = Input.getInt();
+
+        Output.consolePrint("Enter month: ");
+        int month = Input.getInt();
+
+        Output.consolePrint("Enter year: ");
+        int year = Input.getInt();
+
+        Output.consolePrint("Next day date: ");
+        try {
+            Output.consolePrintLine(Algorithms.getNextDayDate(day, month, year));
+        } catch (Exception e) {
+            Output.consolePrintLine(e.toString());
+        }
     }
 }
