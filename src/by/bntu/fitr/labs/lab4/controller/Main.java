@@ -8,12 +8,23 @@ import by.bntu.fitr.labs.lab4.module.logic.Algorithms;
 import by.bntu.fitr.labs.lab4.module.utils.Input;
 
 public class Main {
+    private static StringBuilder sb;
+
     public static void main(String[] args) {
+        sb = new StringBuilder();
+
+        testDragon();
+        testFindMax();
+        testIsMultipleOfNumbers();
+        testDice();
+        testNextDayDate();
+    }
+
+    private static void testDragon() {
         Output.consolePrint("Enter age: ");
         int age = Input.getInt();
         Dragon dragon = new Dragon(age);
 
-        StringBuilder sb = new StringBuilder();
         sb.append("Dragon has ");
         sb.append(dragon.getHeads());
         sb.append(" heads and ");
@@ -22,7 +33,9 @@ public class Main {
 
         Output.consolePrintLine(sb);
         sb.delete(0, sb.length());
+    }
 
+    private static void testFindMax() {
         Output.consolePrint("\nEnter amount of elements: ");
         int n = Input.getInt();
         sb.append("In array of numbers ");
@@ -42,17 +55,18 @@ public class Main {
         } finally {
             sb.delete(0, sb.length());
         }
+    }
 
-
+    private static void testIsMultipleOfNumbers() {
         Output.consolePrint("Enter one number: ");
         int number = Input.getInt();
-        n = Algorithms.getRandomInt(1, 5);
-        arr = new Integer[n];
+        int n = Algorithms.getRandomInt(1, 5);
+        Integer[] arr = new Integer[n];
         for (int i = 0; i < n; i++) {
             arr[i] = Algorithms.getRandomInt(1, 80);
         }
         boolean multiple = Algorithms.isMultipleOfNumbers(number, 2, 3, 5);
-        sb.append("\nThe num ");
+        sb.append("\nNumber ");
         sb.append(number);
         sb.append(multiple ? " is " : " is not ");
         sb.append("multiple of the numbers ");
@@ -63,7 +77,10 @@ public class Main {
 
         Output.consolePrintLine(sb);
 
-        sb.delete(0, sb.length()); // Clear StringBuilder
+        sb.delete(0, sb.length());
+    }
+
+    private static void testDice() {
         sb.append("\nResult of toss of 2 Dices: ");
         sb.append(new DiceGroup(new Dice(), new Dice()).tossAll());
         Output.consolePrintLine(sb.toString());
@@ -77,9 +94,11 @@ public class Main {
         sb.append(Algorithms.getWeekDay(day));
 
         Output.consolePrintLine(sb.toString());
+    }
 
+    private static void testNextDayDate() {
         Output.consolePrint("Enter day: ");
-        day = Input.getInt();
+        int day = Input.getInt();
 
         Output.consolePrint("Enter month: ");
         int month = Input.getInt();
